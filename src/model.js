@@ -50,7 +50,7 @@ export class Animal extends Model {
 // TODO: Animal.init()
 Animal.init(
   {
-    animaId: {
+    animalId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
