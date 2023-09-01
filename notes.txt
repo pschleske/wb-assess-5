@@ -1,0 +1,44 @@
+for part 2:
+primary keys are not SERIAL ( no autoincrement in Model)
+
+humans and animals tables:
+Foreign key for animals is -> humanId 
+humans can have many animals but animals can only have one human
+
+getFullName:
+need to use the this keyword to have access to the column values for that specific human 
+this.column_name
+return this.humanId // 1
+let theHuman = await Human.findByPek(1)
+theHuman.getFullName()
+
+we'll need to use operators 
+import {Op} from 'sequelize'
+handout for sequelize1
+
+part two = model.js
+enforce foreign key relationship
+
+step 2:
+import models 
+step 1 important to complete this step
+
+let dealership = wait Dealership.findByPk(1)
+export const query0 = await dealership.findByPk()
+don't chain things off a promise
+export const query0 = await (await Dealership.findByPk(1).getCars())
+
+don't try to use model method off of a promise
+
+to check answers:
+npm run test
+
+You may be tempted to do
+{where: {email: {[Op.not]: [Op.like]: 'mylikestring'}}}
+this will not work 
+instead 
+{where: {[Op.not]:{email: {[Op.like]: 'mylikestring'}}}}
+
+directory = string
+a new line is written as \n in a string
+don't need to make it look exactly like step 3: Functions (printhumansandanimals)
