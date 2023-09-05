@@ -67,13 +67,13 @@ export const query8 = await Human.findAll({
 export async function printHumansAndAnimals() {
     let directory = ''
 
-    const humans = await Human.findAll()
+    let humans = await Human.findAll()
     for (let i = 0; i < humans.length; i++) {
         let human = humans[i]
 
         directory += human.getFullName() + '\n'
 
-        let animals = human.getAnimals()
+        let animals = await human.getAnimals()
 
         for (let j = 0; j < animals.length; j++) {
             let animal = animals[j]
