@@ -9,7 +9,7 @@ export class Human extends Model {
     return this.toJSON();
   }
 
-  async getFullName() {
+  getFullName() {
     // TODO: Implement this method
     return `${this.fname} ${this.lname}`
   }
